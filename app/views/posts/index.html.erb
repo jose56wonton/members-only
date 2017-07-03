@@ -1,0 +1,19 @@
+
+<h1>Posts</h1>
+<ul class="posts">
+  <% @posts.each do |post| %>
+    <li>
+      <h3><%= post.content %></h3>
+
+      <% if logged_in? %>
+        <p>
+          <%= post.user.username %>
+        </p>
+      <% else %>
+        <p>
+          Anonymous
+        </p>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

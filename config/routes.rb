@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   get 'static_pages/home'
 
-  resources :users
-  root 'static_pages#home'
+
+  root 'posts#index'
+  resources :posts, only: [:new,:create,:index]
 end
